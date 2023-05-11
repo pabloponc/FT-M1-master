@@ -28,15 +28,29 @@ function DecimalABinario(num) {
     // 5 / 2 = 2 residuo 1
     // 2 / 2 = 1 residuo 0
     // 1 / 2 = 0 residuo 1
-  var numBinario = [];
-  for (let i=0; num>0; i++){
-    if (num % 2 != 0){
-      numBinario.unshift(1);
-    }
-    else numBinario.unshift(0);
-    num = Math.floor(num/2);
+ 
+ 
+    // var numBinario = [];
+  // for (let i=0; num>0; i++){
+  //   if (num % 2 != 0){
+  //     numBinario.unshift(1);
+  //   }
+  //   else {
+  //     numBinario.unshift(0);
+  //   }
+  //   num = Math.floor(num/2);
+  // }
+  // return numBinario.join('');
+
+  
+  let numBin = [];
+  while( num >= 1) {
+    let res = Math.trunc(num % 2);
+    num = Math.floor( num / 2);
+    numBin.unshift(res);
   }
-  return numBinario.join('');
+  return numBin.join('');
+
 }
 
 module.exports = {
