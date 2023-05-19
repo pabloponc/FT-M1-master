@@ -43,9 +43,14 @@ BinarySearchTree.prototype.size = function () {
 
 BinarySearchTree.prototype.contains = function(value) {
    if(value===this.value) return true;
-   if (this.left && this.left.contains(value)) return true;
-   if (this.right && this.right.contains(value)) return true;
+   if (value<this.value && this.left && this.left.contains(value)) return true;
+   if (value>this.value && this.right && this.right.contains(value)) return true;
    return false;
+
+   // if(value===this.value) return true;
+   // if (this.left && this.left.contains(value)) return true;
+   // if (this.right && this.right.contains(value)) return true;
+   // return false;
       
 }
 
